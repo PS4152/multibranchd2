@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ('build') {
             steps {
-                echo "executing multi branch pipeline"
+                echo "executing multi branch pipeline from github"
             }
         }
     }
