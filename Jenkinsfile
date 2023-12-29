@@ -1,9 +1,16 @@
 pipeline {
     agent any
+    environment {
+        //key value pairs
+        name = "sumanth"
+        course ="k8s"
+    }
     stages {
-        stage ('build') {
+        stage ("build") {
             steps {
-                echo "executing multi branch pipeline from github"
+                echo "welcome ${name}"
+                echo "you enrolled to ${course} course"
+                //echo "you are certified in gcp"
             }
         }
     }
