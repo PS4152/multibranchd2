@@ -1,20 +1,15 @@
 pipeline {
     agent any
     environment {
-        name = "sumanth"
-        course = "docker"
+        DEPLOY_TO = 'production'
     }
     stages {
-        stage ("build") {
-            environment {
-                cloud = "azure"
-                name = "maha"
+        stage ('deploy') {
+            when {
+            environment name: 'DEPLOY_TO', value:  'production'
             }
             steps {
-                echo "welcome to ${name} "
-                echo "you are enrolled to ${course}"
-                echo "you are enrolled to ${cloud}"
-                sh "printenv"
+               echo "deploying"
             }
         }
     }
