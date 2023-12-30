@@ -16,6 +16,9 @@ pipeline {
             }
         }
         stage ('secondstage') {
+            environment {
+                cloud = "AWS"
+            }
            steps {
             echo "welcome ${name}"
             echo "you enrolled to ${course} course"
