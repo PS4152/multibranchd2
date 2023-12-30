@@ -1,7 +1,6 @@
 pipeline {
     agent any
     //this env variables can be used across all the stages
-    cloud = "GCP"
     environment {
         //key value pairs
         name = "sumanth"
@@ -11,6 +10,7 @@ pipeline {
         stage ("build") {
             //these environment varibles are specific to this stage only 19.25
             environment {
+                 cloud = "GCP"
 
             }
             steps {
