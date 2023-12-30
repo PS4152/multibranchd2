@@ -2,28 +2,18 @@ pipeline {
     agent any
     environment {
         name = "sumanth"
-        course = "k8s"
+        course = "docker"
     }
     stages {
         stage ("build") {
             environment {
-                cloud = "gcp"
+                cloud = "azure"
             }
             steps {
-                echo "welcome ${name}"
-                echo "you enrolled to ${course} course"
-                echo "you are certified in ${cloud}"
+                echo "welcome to ${name} "
+                echo "you are enrolled to ${course}"
+                echo "you are enrolled to ${cloud}"
             }
-        }
-        stage ('secondstage') {
-            environment {
-                cloud = "AWS"
-            }
-           steps {
-            echo "welcome ${name}"
-            echo "you enrolled to ${course} course"
-            echo "you are certified in ${cloud}"
-           }
         }
     }
 }
