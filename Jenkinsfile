@@ -14,6 +14,7 @@ pipeline {
                 echo "welcome to ${name} "
                 echo "you are enrolled to ${course}"
                 echo "you are enrolled to ${cloud}"
+                sh "printenv"
             }
         }
     }
