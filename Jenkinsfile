@@ -8,6 +8,7 @@ pipeline {
         stage ("build") {
             environment {
                 cloud = "azure"
+                name = "maha"
             }
             steps {
                 echo "welcome to ${name} "
