@@ -6,7 +6,9 @@ pipeline {
     stages {
         stage ('deploy') {
             when {
-            environment name: 'DEPLOY_TO', value:  'productions'
+            
+            //equals expected: 5,actual: "${BUILD_NUMBER}"
+             equals expected: 5, actual: currentBuild.number 
             }
             steps {
                echo "deploying"
