@@ -8,7 +8,7 @@ pipeline {
             when {
             
             //equals expected: 5,actual: "${BUILD_NUMBER}"
-             equals expected: 5, actual: currentBuild.number 
+             equals expected: 18, actual: currentBuild.number 
             }
             steps {
                echo "deploying"
