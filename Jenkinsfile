@@ -10,7 +10,6 @@ pipeline {
                 echo "welocme to build stage"
             }
         }
-        stages {
             stage ('deploy to dev') {
                 steps {
                     echo "deploying to dev stage"
