@@ -14,12 +14,15 @@ pipeline {
                     echo "deploying to dev stage"
                 }
             }
-            stage {
+            stage ('pro') {
                 when {
                     allOf {
                         branch 'production'
                         environment name = 'DEPLOY_TO', value: production
                     }
+                }
+                steps {
+                    echo "depoying to production
                 }
             }
         }
