@@ -22,7 +22,7 @@ pipeline {
                     }
                 }
                 steps {
-                    echo "depoying to production
+                    echo "depoying to production"
                 }
             }
         }
