@@ -1,27 +1,29 @@
+
 pipeline {
     agent any
+    environment {
+        DEPLOY_TO = 'production'
+    }
     stages {
-        stage ("build") {
+        stage ('build') {
             steps {
-                echo "welcome to build stage"
+                echo "welocme to build stage"
             }
         }
-        stage ('deploy to dev') {
-            steps {
-                echo "deploying to dev environment"
-            }
-        }
-        stage ('deploy to stage') {
-            when {
-                expression {
-                    // stagr should execute with either production branch or staging branch
-                    BRANCH_NAME ==~ /(production|staging)/
+        stages {
+            stage ('deploy to dev') {
+                steps {
+                    echo "deploying to dev stage"
                 }
             }
-            steps {
-                echo "deploying to stage environment"
+            stage {
+                when {
+                    allOf {
+                        branch 'production'
+                        environment name = 'DEPLOY_TO', value: production
+                    }
+                }
             }
         }
-
     }
 }
