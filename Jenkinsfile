@@ -13,6 +13,7 @@ pipeline {
                     steps {
                         echo "executing fortify scan"
                         sleep 10
+                        error "simulating error during fortify"
                     }
                 }
                 stage('checkmarkscan') {
