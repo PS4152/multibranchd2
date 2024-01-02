@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ('build') {
             when {
-                branch 'release/*'
+                branch 'release-*'
             }
             steps {
                 echo "weclome to pipeline"
