@@ -1,23 +1,12 @@
 pipeline {
-    agent any
-    environment {
-        DEPLOY_TO = 'production'
-    }
+    agent any 
     stages {
         stage ('build') {
-            steps {
-                echo "welcome to build"
-            }
-        }
-        stage ('test') {
             when {
-                anyOf {
-                    branch  'production'
-                    environment name :'DEPLOY_TO', value: 'productions'
-                }
+                branch 'release/*'
             }
             steps {
-                echo "deploying to test"
+                echo "weclome to pipeline"
             }
         }
     }
