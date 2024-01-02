@@ -2,6 +2,7 @@ pipeline {
     agent any 
     stages {
         stage ('stages running in parallel') {
+            failFast true 
             parallel {
                 stage ('sonarscan') {
                     steps {
