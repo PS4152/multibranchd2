@@ -1,18 +1,12 @@
 pipeline {
-    agent any
-    environment {
-        DEPLOY_TO = 'production'
-    }
-    stages {
-        stage ('deploy') {
-            when {
-                not {
-                 equals expected: 'production', actual: 'DEPLOY_TO'
+    agent any {
+        stages {
+            stage ('build') {
+                steps {
+                    echo "welcome to first pipeline"
                 }
             }
-            steps {
-               echo "deploying"
-            }
+
         }
     }
 }
