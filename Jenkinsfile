@@ -20,7 +20,7 @@ pipeline {
             steps {
               echo "hello ${params.PERSON}"
               echo "boolen parameter is: ${params.TOOGLE}"
-              ECHO "Deploying to ${params.ENV} environment"
+              echo "Deploying to ${params.ENV} environment"
             }
         }
     }
