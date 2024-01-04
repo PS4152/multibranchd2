@@ -12,7 +12,7 @@ pipeline {
         choice(
             name: 'ENV',
             choices: ['dev', 'tst', 'stg', 'prd'],
-            description :'select the env u want to deploy'
+            description : 'select the env u want to deploy'
         )
     }
     stages {
