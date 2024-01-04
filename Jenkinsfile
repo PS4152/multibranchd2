@@ -1,18 +1,16 @@
 pipeline {
     agent any
-    environment {
-        DEPLOY_TO = 'production'
+    parameters {
+        // string, text, boolen, choice, password 
+        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+        string(name: 'BRANCH_NAME', defaultValue: 'main', description: 'whats the branch i should build?')
     }
     stages {
-        stage ('deploy') {
-            when {
-                not {
-                 equals expected: 'production', actual: 'DEPLOY_TO'
-                }
-            }
+        stage ('example') {
             steps {
-               echo "deploying"
+              echo "hello siva"
             }
         }
     }
+
 }
