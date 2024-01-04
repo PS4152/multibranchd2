@@ -1,18 +1,22 @@
 pipeline {
     agent any
-    parameters {
-        string(name: 'PERSON', defaultValue: 'mr jenkins', description: 'who shouid i say i hello ')
-        text(name: 'BIOGRAPHY', defaultValue: '', description: 'enter the information below')
-        booleanParam(name: 'TOGGLE', defaultValue: true, description: 'picksomething')
-        password(name: 'PASSWORD', defaultValue: 'secter', description: 'enter a password')
-    }
     stages {
-        stage ('build') {
+        stage ("build") {
             steps {
-                echo "building ${PERSON}"
-                echo "bio ${BIOGRAPHY}"
-                echo "toggle ${TOGGLE}"  
-                echo "paa ${ASSWORD}"          }
+                echo "buliding block"
+            }
+        }
+        stage ("scrpiting") {
+            steps {
+                script {
+                    def course = "k8s"
+                    if (course == "k8s") {
+                        println("thanks for enrolling ${course}")
+                    }
+                    else
+                    println("do enroll")
+                }
+            }
         }
     }
 }
