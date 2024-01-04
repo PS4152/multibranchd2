@@ -1,15 +1,13 @@
 
 pipeline {
-    agent any
+    agent any 
     stages {
-        stage ('build') {
+        stage ('buid') {
             steps {
-                timeout (time: 300, unit:'SECONDS') {
-                  input message:'are you building the application', ok: 'yes', submitter: 'sumanth'
-                }
-                
-                echo "builing the application"
+                timeout (time: 180, unit: 'SECONDS')
+                input message: 'are you build', ok: 'yes', submitter: 'sumanth'
             }
+            echo "building the application"
         }
     }
 }
