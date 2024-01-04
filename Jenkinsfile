@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage ('example') {
             steps {
-              echo "hello siva"
+              echo "hello ${params.PERSON}"
             }
         }
     }
