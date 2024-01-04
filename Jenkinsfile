@@ -6,7 +6,7 @@ pipeline {
         string(name: 'BRANCH_NAME', defaultValue: 'main', description: 'whats the branch i should build?')
         boolenParam(
             name: 'TOOGLE',
-            defaultValue: true
+            defaultValue: true,
             description: 'toogle this value'
         )
         choice(
