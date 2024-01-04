@@ -9,7 +9,7 @@ pipeline {
         stage ("scrpiting") {
             steps {
                 script {
-                    def course = "k8s"
+                    def course = "docker"
                     if (course == "k8s") {
                         println("thanks for enrolling ${course}")
                     }
